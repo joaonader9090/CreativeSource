@@ -257,7 +257,7 @@ nav {
   letter-spacing: .05em;
 }
 
-/* ── PROCESS STRIP ── */
+/* ── PROCESS STRIP (CAIXA DO MEIO - CENTRALIZADA) ── */
 .process-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -265,34 +265,39 @@ nav {
 }
 
 .process-step {
-  padding: 2rem 2.5rem;
+  padding: 3rem 2.5rem;
   border-right: 1px solid var(--border);
   display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .process-step:last-child { border-right: none; }
 
 .step-num {
   font-family: var(--serif);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-style: italic;
-  color: rgba(43, 66, 87, 0.2);
+  color: rgba(43, 66, 87, 0.25);
   line-height: 1;
-  flex-shrink: 0;
-  padding-top: .1rem;
+  margin-bottom: 0.75rem;
 }
 
-.step-body {}
+.step-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .step-title {
-  font-size: .88rem;
+  font-size: .95rem;
   font-weight: 600;
-  margin-bottom: .3rem;
+  margin-bottom: .5rem;
 }
 .step-desc {
-  font-size: .8rem;
+  font-size: .82rem;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.6;
+  max-width: 32ch; /* Mantém o bloco de texto harmonioso e centralizado */
 }
 
 /* ── CATALOG ── */
@@ -578,7 +583,7 @@ nav {
 .guarantee-icon { font-size: .9rem; flex-shrink: 0; margin-top: .1rem; }
 .guarantee-text { font-size: .72rem; color: var(--muted); line-height: 1.4; }
 
-/* ── FOOTER ── */
+/* ── FOOTER (RODAPÉ ESTICADO DE PONTA A PONTA) ── */
 footer {
   border-top: 1px solid var(--border);
   padding: 1.75rem 2.5rem;
@@ -586,6 +591,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   background: var(--surface);
+  width: 100%;
 }
 .footer-logo {
   font-family: var(--serif);
@@ -622,13 +628,13 @@ footer {
   .hero-left { padding: 3rem 1.25rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
   .hero-right { padding: 2rem 1.25rem; }
   .process-strip { grid-template-columns: 1fr; }
-  .process-step { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem 1.25rem; }
+  .process-step { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.25rem; }
   .process-step:last-child { border-bottom: none; }
   .catalog { padding: 3rem 1.25rem; }
   .catalog-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
   .catalog-table th:nth-child(3),
   .catalog-table td:nth-child(3) { display: none; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.25rem; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
 }
 
