@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* Editorial & Professional Color Scheme */
-  --bg:       #fcfbfa; /* Warm, sophisticated light cream */
-  --surface:  #f4f1eb; /* Soft, grounded neutral tone */
-  --border:   rgba(26, 25, 23, 0.09); /* Crisp, subtle contrast borders */
-  --text:     #1a1917; /* Rich, readable charcoal black */
-  --muted:    rgba(26, 25, 23, 0.6); /* Softened text for metadata */
-  --accent:   #2b4257; /* Deep slate blue/navy - solid and editorial */
-  --accent-h: #1e3040; /* Darker navy for hover states */
+  /* Retornando à paleta editorial clara das imagens */
+  --bg:       #fcfbfa; 
+  --surface:  #f4f1eb; 
+  --border:   rgba(26, 25, 23, 0.09); 
+  --text:     #1a1917; 
+  --muted:    rgba(26, 25, 23, 0.6); 
+  --accent:   #2b4257; /* Azul ardósia escuro dos botões */
+  --accent-h: #1e3040; 
   --serif:    'Instrument Serif', Georgia, serif;
   --sans:     'DM Sans', sans-serif;
   --mono:     'DM Mono', monospace;
@@ -31,6 +31,7 @@ body {
   font-size: 15px;
   line-height: 1.55;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ── NAV ── */
@@ -45,6 +46,7 @@ nav {
   background: rgba(252, 251, 250, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  width: 100%;
 }
 
 .nav-logo {
@@ -88,6 +90,7 @@ nav {
   gap: 0;
   min-height: calc(100vh - 57px);
   border-bottom: 1px solid var(--border);
+  width: 100%;
 }
 
 .hero-left {
@@ -257,11 +260,18 @@ nav {
   letter-spacing: .05em;
 }
 
-/* ── PROCESS STRIP (CAIXA DO MEIO - CENTRALIZADA) ── */
+/* ── PROCESS STRIP (CAIXA DO MEIO - TOTALMENTE ESTICADA E CENTRALIZADA) ── */
 .process-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .process-step {
@@ -271,6 +281,7 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 .process-step:last-child { border-right: none; }
 
@@ -297,7 +308,7 @@ nav {
   font-size: .82rem;
   color: var(--muted);
   line-height: 1.6;
-  max-width: 32ch; /* Mantém o bloco de texto harmonioso e centralizado */
+  max-width: 32ch;
 }
 
 /* ── CATALOG ── */
@@ -393,7 +404,6 @@ nav {
   margin-top: .15rem;
 }
 
-/* Tasteful, integrated asset tags */
 .tag {
   display: inline-block;
   font-family: var(--mono);
@@ -461,7 +471,6 @@ nav {
   overflow-y: auto;
   padding: 2.5rem;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 .modal-close {
@@ -524,7 +533,6 @@ nav {
   margin-left: auto;
 }
 
-/* Form inside modal */
 .form-group { margin-bottom: 1.1rem; }
 .form-label {
   font-family: var(--mono);
@@ -583,15 +591,20 @@ nav {
 .guarantee-icon { font-size: .9rem; flex-shrink: 0; margin-top: .1rem; }
 .guarantee-text { font-size: .72rem; color: var(--muted); line-height: 1.4; }
 
-/* ── FOOTER (RODAPÉ ESTICADO DE PONTA A PONTA) ── */
+/* ── FOOTER (TOTALMENTE ESTICADO DE PONTA A PONTA) ── */
 footer {
   border-top: 1px solid var(--border);
-  padding: 1.75rem 2.5rem;
+  padding: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--surface);
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 .footer-logo {
   font-family: var(--serif);
@@ -627,14 +640,14 @@ footer {
   .hero { grid-template-columns: 1fr; min-height: unset; }
   .hero-left { padding: 3rem 1.25rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
   .hero-right { padding: 2rem 1.25rem; }
-  .process-strip { grid-template-columns: 1fr; }
+  .process-strip { grid-template-columns: 1fr; width: 100%; margin-left: 0; margin-right: 0; left: 0; right: 0; }
   .process-step { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.25rem; }
   .process-step:last-child { border-bottom: none; }
   .catalog { padding: 3rem 1.25rem; }
   .catalog-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
   .catalog-table th:nth-child(3),
   .catalog-table td:nth-child(3) { display: none; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.25rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.25rem; width: 100%; margin-left: 0; margin-right: 0; left: 0; right: 0; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
 }
 
@@ -916,7 +929,6 @@ footer {
 </div>
 
 <script>
-// ── Service data ──
 const serviceData = {
   'jingle':  { icon: '🎵', label: 'Jingle / <em>Trilha</em>',        price: 'R$ 800',   prazo: '5–7 dias' },
   'video':   { icon: '🎬', label: 'Vídeo <em>Institucional</em>',    price: 'R$ 2.500', prazo: '8–10 dias' },
@@ -1004,7 +1016,6 @@ function submitForm() {
   }, 1000);
 }
 
-// ── Catalog filter ──
 function filterCatalog(cat, btn) {
   document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
